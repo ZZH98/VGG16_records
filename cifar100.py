@@ -15,7 +15,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
 batch_size = 32
 learning_rate = 0.01
-epoches = 10
+epoches = 20
 n_classes = 100
 
 dict = OrderedDict()
