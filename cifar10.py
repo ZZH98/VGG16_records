@@ -14,8 +14,8 @@ from collections import OrderedDict
 os.environ['CUDA_VISIBLE_DEVICES'] = '12'
 
 batch_size = 32
-learning_rate = 0.05
-epoches = 5
+learning_rate = 0.01
+epoches = 10
 n_classes = 10
 
 dict = OrderedDict()
