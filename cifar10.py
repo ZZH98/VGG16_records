@@ -11,11 +11,11 @@ import json
 from collections import OrderedDict
 
 # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-os.environ['CUDA_VISIBLE_DEVICES'] = '12'
+os.environ['CUDA_VISIBLE_DEVICES'] = '2'
 
 batch_size = 32
 learning_rate = 0.01
-epoches = 10
+epoches = 20
 n_classes = 10
 
 dict = OrderedDict()
