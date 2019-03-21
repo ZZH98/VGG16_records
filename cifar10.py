@@ -11,10 +11,10 @@ import json
 from collections import OrderedDict
 
 # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-os.environ['CUDA_VISIBLE_DEVICES'] = '12,14'
+os.environ['CUDA_VISIBLE_DEVICES'] = '12'
 
-batch_size = 16
-learning_rate = 0.01
+batch_size = 32
+learning_rate = 0.05
 epoches = 5
 n_classes = 10
 
@@ -29,7 +29,7 @@ dict['loss_record'] = []
 save_path = "./model/model.pth"
 
 data_transform = transforms.Compose([
-    transforms.RandomResizedCrop(224),
+    transforms.RandomResizedCrop(32),
     transforms.RandomHorizontalFlip(),
     transforms.ToTensor(),
     transforms.Normalize(mean = [ 0.485, 0.456, 0.406 ],
@@ -138,7 +138,7 @@ class VGG16(tnn.Module):
 
             # 6 Fully connected layer
             # Dropout layer omitted since batch normalization is used.
-            tnn.Linear(512*7*7, 4096),
+            tnn.Linear(512*1*1, 4096),
             tnn.BatchNorm1d(4096),
             tnn.ReLU())
 
